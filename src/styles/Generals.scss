@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;1,700&display=swap');
+
+:root{
+  --bg-color: #323437;
+  --main-color: #e2b714;
+  --caret-color: #e2b714;
+  --sub-color: #646669;
+  --text-color: #d1d0c5;
+  --error-color: #ca4754;
+  --error-extra-color: #7e2a33;
+  --colorful-error-color: #ca4754;
+  --colorful-error-extra-color: #7e2a33;
+}
+
+html{
+  font-family: "Roboto Mono", "Roboto Mono";
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: var(--bg-color);
+}
+
+h1{
+  color: var(--main-color);
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.phrase{
+  display: flex;
+  padding: 20px;
+  width: 95%;
+  max-width: 1100px;
+  margin: 35px auto;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.word{
+  display: flex;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin-right: 10px;
+  color: var(--sub-color);
+}
+
+pre{
+  margin: 0;
+}
+
+.letter{
+  position: relative;
+
+  &.correct{
+    color: var(--text-color);
+  }
+
+  &.incorrect{
+    color:var(--error-color)
+  }
+
+  &.active{
+    // background-color: yellow;
+    // background: var(--caret-color);
+    // boder
+    // &::before{
+    //   animation: tile 1s linear infinite;
+    //   content: '';
+    //   // border: 1px solid var(--caret-color);
+    //   position: absolute;
+    //   background: var(--caret-color);
+    //   width: 3px;
+    //   left: 0;
+    //   height: 100%;
+    //   // left: 0;
+    //   // right: 0;
+    // }
+  }
+
+
+}
+
+
+@keyframes tile{
+  0%{
+    opacity: 1;
+  }
+
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
