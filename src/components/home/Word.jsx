@@ -1,29 +1,37 @@
 import React, {useState,useCallback, useEffect, memo, forwardRef} from 'react';
 
-const Letter = forwardRef(({active,correct,index,value,setRef},ref)=>{
+const Letter = ({active,correct,index,value,setRef})=>{
 
   return (
     <div ref={(node)=>{
       if(active){
-        ref(node)
+        setRef(node)
       }
     }} 
     key={index} 
     className={`letter ${active ? 'active' : ''}  ${correct === false ? 'incorrect' : ''}  ${correct ? 'correct' : ''}`} >
       <pre>
         {value}
-    </pre>
+      </pre>
     </div>
   )
-})
+}
 
-function Word ({text,writed, setRef}) {
+function Word ({text,setRef}) {
+
+  // console.log(setRef)
 
     return (
     <div className='word'>
       {
         text.letters.map((letter,index)=>{
-          return(<Letter ref={setRef} key={index} active={letter.active} correct={letter.correct} value={letter.key}/>)
+          return(
+          <Letter 
+            setRef={setRef} 
+            key={index} 
+            active={letter.active} 
+            correct={letter.correct} 
+            value={letter.key}/>)
         })
       }
 
